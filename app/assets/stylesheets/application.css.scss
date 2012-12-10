@@ -12,8 +12,9 @@
  *= require_tree .
  */
 
-/* @import "bootswatch/spacelab/variables"; */
-@import "bootswatch/simplex/variables";
+/* @import "bootswatch/spacelab/variables";
+@import "bootswatch/simplex/variables"; */
+@import "bootswatch/spruce/variables";
 @import "bootstrap";
 
 @font-face {
@@ -23,11 +24,16 @@
   src: local('Ubuntu'), url(https://themes.googleusercontent.com/static/fonts/ubuntu/v4/vRvZYZlUaogOuHbBTT1SNevvDin1pK8aKteLpeZ5c0A.woff) format('woff');
 }
 
-body { padding-top: 60px; }
+body { padding-top: 70px; }
+
+.logged-in-msg {
+  display: inline;
+  margin-right: 20px;
+ }
 
 .login-status {
   text-align: right;
-  padding-top: 11px;
+  padding-top: 17px;
   font-size: 0.8em;
 }
 
@@ -52,4 +58,4 @@ body { padding-top: 60px; }
 }
 
 @import "bootstrap-responsive";
-@import "bootswatch/simplex/bootswatch";
+@import "bootswatch/spruce/bootswatch";
