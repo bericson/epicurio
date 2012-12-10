@@ -10,17 +10,18 @@ Epicurio::Application.configure do
   config.action_mailer.default :charset => "utf-8"
 
   config.action_mailer.smtp_settings = {
-      address: "smtp.gmail.com",
-      port: 587,
-      domain: "localhost:3000",
-      authentication: "plain",
-      enable_starttls_auto: true,
+    address: "smtp.gmail.com",
+    port: 587,
+    domain: "localhost:3000",
+    authentication: "plain",
+    enable_starttls_auto: true,
 
-      user_name: "benbjammin",
-      password: "huMptyduMpty"
+    user_name: "benbjammin",
+    password: "huMptyduMpty"
 
-      #user_name: ENV["GMAIL_USERNAME"],
-      #password: ENV["GMAIL_PASSWORD"]
+    # Commented out for now as, for some reason these values aren't being passed from my .bashrc file in the environment (RubyMine loading issue?)
+    #user_name: ENV["GMAIL_USERNAME"],
+    #password: ENV["GMAIL_PASSWORD"]
   }
 
   # In the development environment your application's code is reloaded on
