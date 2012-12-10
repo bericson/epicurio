@@ -1,6 +1,7 @@
 Epicurio::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
+  # ActionMailer Config
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
   config.action_mailer.delivery_method = :smtp
 # change to true to allow email to be sent during development
@@ -14,8 +15,12 @@ Epicurio::Application.configure do
       domain: "localhost:3000",
       authentication: "plain",
       enable_starttls_auto: true,
-      user_name: ENV["GMAIL_USERNAME"],
-      password: ENV["GMAIL_PASSWORD"]
+
+      user_name: "benbjammin",
+      password: "huMptyduMpty"
+
+      #user_name: ENV["GMAIL_USERNAME"],
+      #password: ENV["GMAIL_PASSWORD"]
   }
 
   # In the development environment your application's code is reloaded on
@@ -30,8 +35,8 @@ Epicurio::Application.configure do
   config.consider_all_requests_local       = true
   config.action_controller.perform_caching = false
 
-  # Don't care if the mailer can't send
-  config.action_mailer.raise_delivery_errors = false
+  ## Don't care if the mailer can't send
+  #config.action_mailer.raise_delivery_errors = false
 
   # Print deprecation notices to the Rails logger
   config.active_support.deprecation = :log
