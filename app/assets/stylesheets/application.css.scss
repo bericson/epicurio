@@ -24,17 +24,17 @@
   src: local('Ubuntu'), url(https://themes.googleusercontent.com/static/fonts/ubuntu/v4/vRvZYZlUaogOuHbBTT1SNevvDin1pK8aKteLpeZ5c0A.woff) format('woff');
 }
 
-body { padding-top: 70px; }
+body { padding-top: 75px; }
 
-.logged-in-msg {
-  display: inline;
-  margin-right: 20px;
+.login-status-msg {
+  text-align: right;
+  padding-top: 8px;
+  font-size: 0.8em;
  }
 
-.login-status {
+.login-status-nav {
   text-align: right;
-  padding-top: 17px;
-  font-size: 0.8em;
+  font-size: 0.9em;
 }
 
 //.content {

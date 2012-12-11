@@ -1,6 +1,12 @@
-<div class="login-status">
+<div class="login-status-msg">
   <% if user_signed_in? %>
-    <div class="logged-in-msg">Logged in as <%= current_user.email %>, browsing as a <%#= current_user.role.upcase %> User</div>
+    You are logged-in as <%= current_user.email %>, and are browsing as a <%= current_user.roles.sort.first.name.titlecase %> User
+  <% else %>
+    You are not registered or logged-in, and are browsing as a Guest User
+  <% end %>
+</div>
+<div class="login-status-nav">
+  <% if user_signed_in? %>
       <%= link_to('Logout', destroy_user_session_path, :method=>'delete') %>&nbsp; | &nbsp;
   <% else %>
       <%= link_to('Login', new_user_session_path)  %>&nbsp; | &nbsp;
