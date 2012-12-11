@@ -100,6 +100,13 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.19)
+    money (5.0.0)
+      i18n (~> 0.4)
+      json
+    money-rails (0.6.0)
+      activesupport (~> 3.0)
+      money (~> 5.0.0)
+      railties (~> 3.0)
     multi_json (1.4.0)
     nokogiri (1.5.5)
     orm_adapter (0.4.0)
@@ -194,6 +201,7 @@ DEPENDENCIES
   factory_girl_rails (>= 4.1.0)
   jquery-rails
   launchy (>= 2.1.2)
+  money-rails
   pg
   quiet_assets (>= 1.0.1)
   rails (= 3.2.9)
