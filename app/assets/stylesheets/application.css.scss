@@ -61,12 +61,32 @@ body { padding-top: 75px; }
 //  box-shadow: 0 1px 2px rgba(0,0,0,.15);
 //}
 
-#footer {
+//* {
+//  margin: 0;
+//}
+
+////html, body {
+//  height: 100%;
+//}
+
+.wrapper {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -20px; /* the bottom margin is the negative value of the footer's height */
+}
+.push {
+  height: 20px;
+  // height: 142px; /* .push must be the same height as .footer */
+}
+
+.footer {
   margin-top: 45px;
   padding: 10px;
   border-top: 1px solid #ccc;
   border-bottom: 1px solid #ccc;
   background-color: #eee;
+  color: #999;
 }
 
 @import "bootstrap-responsive";

@@ -1,13 +1,16 @@
 Epicurio::Application.routes.draw do
 
   authenticated :user do
-    root :to => 'home#index'
+    root :to => 'recipes#index'
+    #root :to => 'home#index'
   end
 
-  root :to => "home#index"
+  root :to => 'recipes#index'
 
   devise_for :users
   resources :users
+  resources :foods
+  resources :recipes
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -1,0 +1,48 @@
+<%= form_for(@recipe, :html => { multipart: true,
+                                 :class => 'form-horizontal' }) do |f| %>
+  <% if @recipe.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@recipe.errors.count, "error") %> prohibited this
+        recipe from being saved:</h2>
+
+      <ul>
+        <% @recipe.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="control-group">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <div class="control-group">
+    <%= f.label :ingredients %>
+    <%= f.text_field :ingredients %>
+  </div>
+  <div class="control-group">
+    <%= f.label :servings %>
+    <%= f.number_field :servings %>
+  </div>
+  <div class="control-group">
+    <%= f.label :prep_time %>
+    <%= f.time_select :prep_time %>
+  </div>
+  <div class="control-group">
+    <%= f.label :cook_time %>
+    <%= f.time_select :cook_time %>
+  </div>
+  <div class="control-group">
+    <%= f.label :author %>
+    <%= f.text_field :author %>
+  </div>
+  <div class="control-group">
+    <%= f.label :preparation %>
+    <%= f.text_area :preparation, size: "60x12", class: "span5" %>
+  </div>
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to 'Cancel', root_path, class: "btn" %>
+  </div>
+<% end %>

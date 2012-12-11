@@ -1,0 +1,46 @@
+<h1>Recipes</h1>
+
+<table class="table table-striped">
+  <tr>
+    <th>Name</th>
+    <th>Ingredients</th>
+    <th>Servings</th>
+    <th>Prep time</th>
+    <th>Cook time</th>
+    <th>Author</th>
+    <th>Preparation</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @recipes.each do |recipe| %>
+  <tr>
+    <td><%= recipe.name %></td>
+    <td><%= recipe.ingredients %></td>
+    <td><%= recipe.servings %></td>
+    <td><%= recipe.prep_time %></td>
+    <td><%= recipe.cook_time %></td>
+    <td><%= recipe.author %></td>
+    <td><%= recipe.preparation %></td>
+    <td><%= link_to 'Show', recipe, :class => 'btn btn-mini' %></td>
+    <% if user_signed_in? %>
+      <% if current_user.has_role? :admin %>
+        <td><%= link_to 'Edit', edit_recipe_path(recipe), :class => 'btn btn-mini' %></td>
+        <td><%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' }, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-mini btn-danger' %></td>
+      <% else %>
+        <td></td>
+        <td></td>
+      <% end %>
+    <% else %>
+      <td></td>
+      <td></td>
+    <% end %>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Recipe', new_recipe_path, :class => 'btn btn-mini
+btn-primary' %>

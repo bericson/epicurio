@@ -19,3 +19,6 @@
 
 # Ignore 'seeds.rb' file that has usernames and passwords for default config
 /db/seeds.rb
+
+# Ignore source and brainstorming/scratchspace files
+/_sources/*

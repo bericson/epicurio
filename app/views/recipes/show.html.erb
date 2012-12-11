@@ -1,0 +1,41 @@
+<h1>Recipe</h1>
+<h2><%= @recipe.name %></h2>
+
+<p>
+  <b>Title:</b>
+  <%= @recipe.name %>
+</p>
+
+<p>
+  <b>Ingredients:</b>
+  <%= @recipe.ingredients %>
+</p>
+
+<p>
+  <b>Servings:</b>
+  <%= @recipe.servings %>
+</p>
+
+<p>
+  <b>Prep time:</b>
+  <%= @recipe.prep_time %>
+</p>
+
+<p>
+  <b>Cook time:</b>
+  <%= @recipe.cook_time %>
+</p>
+
+<p>
+  <b>Author:</b>
+  <%= @recipe.author %>
+</p>
+
+<p>
+  <b>Preparation:</b>
+  <%= @recipe.preparation %>
+</p>
+
+
+<%= link_to 'Edit', edit_recipe_path(@recipe) %> |
+<%= link_to 'Back', recipes_path %>

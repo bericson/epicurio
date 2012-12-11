@@ -1,0 +1,43 @@
+<h1>Food</h1>
+
+<table class="table table-striped">
+  <tr>
+    <th>Name</th>
+    <th>Serving Amt.</th>
+    <th>Calories</th>
+    <th>Saturated Fat</th>
+    <th>Mono-unsaturated Fat</th>
+    <th>Poly-unsaturated Fat</th>
+    <th>Carbohydrate</th>
+    <th>Sugar</th>
+    <th>Protein</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+  <% @foods.each do |food| %>
+    <tr>
+      <td width="100px"><%= food.shrt_desc %></td>
+      <td><%= food.gmwt_desc1 %></td>
+      <td><%= food.energ_kcal %></td>
+      <td><%= food.fa_sat %></td>
+      <td><%= food.fa_mono %></td>
+      <td><%= food.fa_poly %></td>
+      <td><%= food.carbohydrt %></td>
+      <td><%= food.sugar_tot %></td>
+      <td><%= food.protein %></td>
+      <td><%= link_to 'Show', food, :class => 'btn btn-mini' %></td>
+      <td><%= link_to 'Edit', edit_food_path(food), :class => 'btn btn-mini' %></td>
+      <td><%= link_to 'Destroy', food, method: :delete,
+                      data: { confirm: 'Are you sure?' },
+                      :class => 'btn btn-mini btn-danger' %></td>
+    </tr>
+  <% end %>
+</table>
+
+<!--<br />-->
+
+<%#= link_to 'New Ingredient', new_food_path, :class => 'btn btn-mini
+btn-primary' %>
+
