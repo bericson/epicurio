@@ -2,7 +2,7 @@
   <% if user_signed_in? %>
     You are logged-in as <%= current_user.email %>, and are browsing as a <%= current_user.roles.sort.first.name.titlecase %> User
   <% else %>
-    You are not registered or logged-in, and are browsing as a Guest User
+    You are not registered or logged-in, and are browsing as an Unregistered User
   <% end %>
 </div>
 <div class="login-status-nav">

@@ -4,7 +4,7 @@ class Recipe < ActiveRecord::Base
 
   validates_presence_of :name, :author, :ingredients
 
-  has_many :ingredients, as: :itemable, dependent: :destroy
+  #has_many :ingredients, as: :itemable, dependent: :destroy
 
   #monetize :total_cents
   #
