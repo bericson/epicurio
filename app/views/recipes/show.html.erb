@@ -1,15 +1,5 @@
-<h1>Recipe</h1>
+<h1>Featured Recipe</h1>
 <h2><%= @recipe.name %></h2>
-
-<p>
-  <b>Title:</b>
-  <%= @recipe.name %>
-</p>
-
-<p>
-  <b>Ingredients:</b>
-  <%= @recipe.ingredients %>
-</p>
 
 <p>
   <b>Servings:</b>
@@ -31,11 +21,20 @@
   <%= @recipe.author %>
 </p>
 
+
+<p>
+  <b>Ingredients:</b>
+  <ul>
+    <li><%= @recipe.ingredients %></li>
+  </ul>
+</p>
+
 <p>
   <b>Preparation:</b>
   <%= @recipe.preparation %>
 </p>
 
+<br>
 
-<%= link_to 'Edit', edit_recipe_path(@recipe) %> |
-<%= link_to 'Back', recipes_path %>
+<%= link_to 'Edit Recipe', edit_recipe_path(@recipe) %> &nbsp;|&nbsp;
+<%= link_to 'Back to Recipe Listing', recipes_path %>
