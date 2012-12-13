@@ -1,6 +1,8 @@
 <div class="login-status-msg">
   <% if user_signed_in? %>
-    You are logged-in as <%= current_user.email %>, and are browsing as a <%= current_user.roles.sort.first.name.titlecase %> User
+    You are logged-in as <%= current_user.email %>, and are browsing as
+    <% if current_user.has_role? :admin %> an <% else %> a <% end %>
+    <%= current_user.roles.sort.first.name.titlecase %> User
   <% else %>
     You are not registered or logged-in, and are browsing as an Unregistered User
   <% end %>
