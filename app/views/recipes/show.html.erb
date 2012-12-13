@@ -1,6 +1,10 @@
 <h1>Featured Recipe</h1>
 <h2><%= @recipe.name %></h2>
 
+<%= (image_tag @recipe.image_url(:large), :class => "img-polaroid") if @recipe.image? %>
+
+<br>
+
 <p>
   <b>Servings:</b>
   <%= @recipe.servings %>

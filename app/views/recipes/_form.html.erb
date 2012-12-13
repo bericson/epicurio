@@ -41,6 +41,16 @@
     <%= f.label :preparation %>
     <%= f.text_area :preparation, size: "60x12", class: "span5" %>
   </div>
+
+  <div class="control-group">
+    Upload images of recipe:
+    <%= f.label :image_name %>
+    <%= f.text_field :image_name %>
+    <%= f.file_field :image %>
+    <%= f.label :remote_image_url, "or image URL" %>
+    <%= f.text_field :remote_image_url %>
+  </div>
+
   <div class="form-actions">
     <%= f.submit nil, :class => 'btn btn-primary' %>
     <%= link_to 'Cancel', root_path, class: "btn" %>

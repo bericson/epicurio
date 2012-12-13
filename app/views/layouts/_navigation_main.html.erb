@@ -8,12 +8,12 @@
   <% end %>
   <% if user_signed_in? %>
     <li>
-      <%= link_to('Create New Recipe') %>
+      <%#= link_to('Create New Recipe') %>
     </li>
   <% end %>
   <% if user_signed_in? %>
     <li>
-      <%= link_to('Manage My Recipes') %>
+      <%#= link_to('Manage My Recipes') %>
     </li>
     <% if current_user.has_role? :admin %>
       <li>

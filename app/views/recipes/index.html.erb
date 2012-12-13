@@ -2,6 +2,7 @@
 
 <table class="table table-striped">
   <tr>
+    <th></th>
     <th>Name</th>
     <th>Ingredients</th>
     <th>Servings</th>
@@ -16,6 +17,7 @@
 
 <% @recipes.each do |recipe| %>
   <tr>
+    <td><%= (image_tag recipe.image_url(:thumb), :class => "img-polaroid") if recipe.image? %></td>
     <td><%= recipe.name %></td>
     <td><%= recipe.ingredients %></td>
     <td><%= recipe.servings %></td>

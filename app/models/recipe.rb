@@ -1,8 +1,11 @@
 class Recipe < ActiveRecord::Base
 
-  attr_accessible :author, :cook_time, :ingredients, :name, :prep_time, :preparation, :servings
+  attr_accessible :author, :cook_time, :ingredients, :name, :prep_time,
+                  :preparation, :servings, :image, :image_name, :remote_image_url
 
   validates_presence_of :name, :author, :ingredients
+
+  mount_uploader :image, ImageUploader
 
   #has_many :ingredients, as: :itemable, dependent: :destroy
 
@@ -16,7 +19,5 @@ class Recipe < ActiveRecord::Base
   #  end
   #  return cart_total
   #end
-
-  #mount_uploader :image, ImageUploader
 
 end
