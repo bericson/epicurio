@@ -18,6 +18,10 @@
     <%= f.text_field :name %>
   </div>
   <div class="control-group">
+    <%= f.label :summary %>
+    <%= f.text_area :summary, size: "60x12", class: "span5" %>
+  </div>
+  <div class="control-group">
     <%= f.label :ingredients %>
     <%= f.text_field :ingredients %>
   </div>
@@ -42,13 +46,26 @@
     <%= f.text_area :preparation, size: "60x12", class: "span5" %>
   </div>
 
+  <% if @recipe.image? %>
+    <div>
+      Current image of the prepared recipe:<br>
+      <%= (image_tag @recipe.image_url(:medium), :class => "img-polaroid") %>
+      <br><br>
+    </div>
+  <% end %>
+
   <div class="control-group">
-    Upload image of recipe:<br>
-    <%= f.label :image_name %>
-    <%= f.text_field :image_name %>
-    <%= f.file_field :image %>
-    <%= f.label :remote_image_url, "or image URL" %>
-    <%= f.text_field :remote_image_url %>
+    <% if @recipe.image? %>
+      Upload a new image of the prepared recipe (replacing the current one):
+    <% else %>
+      Upload an image of the prepared recipe:
+    <% end %>
+      <br>
+      <%= f.label :image_name %>
+      <%= f.text_field :image_name %>
+      <%= f.file_field :image %>
+      <%= f.label :remote_image_url, "or image URL" %>
+      <%= f.text_field :remote_image_url %>
   </div>
 
   <div class="form-actions">

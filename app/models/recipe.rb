@@ -1,6 +1,6 @@
 class Recipe < ActiveRecord::Base
 
-  attr_accessible :author, :cook_time, :ingredients, :name, :prep_time,
+  attr_accessible :author, :summary, :cook_time, :ingredients, :name, :prep_time,
                   :preparation, :servings, :image, :image_name, :remote_image_url
 
   validates_presence_of :name, :author, :ingredients

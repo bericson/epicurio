@@ -2,7 +2,58 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+#recipe-listing {
+  float: left;
+  table {
+    padding: 20px;
+  }
+  .thumb {
+    width: 60px;
+    //padding: 10px 0px 0px 30px;
+  }
+  .overview {
+    //width: 400px;
+  }
+  .actions {
+    text-align: center;
+  }
+  .btn {
+    margin: 5px;
+  }
+}
+
+#sidebar {
+  //float: right;
+}
+
 .img-polaroid {
   background-color: #f9f9f9;
   border: 1px solid #ccc;
+}
+
+a.recipe-name-link {
+  font-size: 1.4em;
+  font-weight: bold;
+  &:link { color: #197778 !important; }
+  &:visited { color: #197778 !important; }
+}
+
+#recipe {
+  background-color: #FFFFDD;
+  //background-color: #e9ebd6;
+  padding: 20px 20px 30px 20px;
+  //margin-left: -20px; /* negative indent the amount of the padding to maintain the grid system */
+  -webkit-border-radius: 6px 6px 6px 6px;
+  -moz-border-radius: 6px 6px 6px 6px;
+  border-radius: 6px 6px 6px 6px;
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.15);
+  -moz-box-shadow: 0 1px 2px rgba(0,0,0,.15);
+  box-shadow: 0 1px 2px rgba(0,0,0,.15);
+  .image {
+    float: left;
+    width: 200px;
+    margin-right: 20px;
+  }
+  .details {
+  }
 }

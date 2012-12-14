@@ -1,48 +1,47 @@
 <h1>Recipes</h1>
 
-<table class="table table-striped">
-  <tr>
-    <th></th>
-    <th>Name</th>
-    <th>Ingredients</th>
-    <th>Servings</th>
-    <th>Prep time</th>
-    <th>Cook time</th>
-    <th>Author</th>
-    <th>Preparation</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<div id="recipe-listing" class="span8">
+  <table class="table table-striped">
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
 
-<% @recipes.each do |recipe| %>
-  <tr>
-    <td><%= (link_to (image_tag recipe.image_url(:thumb), :class => "img-polaroid"), recipe) if recipe.image? %></td>
-    <td><%= link_to recipe.name, recipe %></td>
-    <td><%= recipe.ingredients %></td>
-    <td><%= recipe.servings %></td>
-    <td><%= recipe.prep_time %></td>
-    <td><%= recipe.cook_time %></td>
-    <td><%= recipe.author %></td>
-    <td><%= recipe.preparation %></td>
-    <td><%= link_to 'Show', recipe, :class => 'btn btn-mini' %></td>
-    <% if user_signed_in? %>
-      <% if current_user.has_role? :admin %>
-        <td><%= link_to 'Edit', edit_recipe_path(recipe), :class => 'btn btn-mini' %></td>
-        <td><%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' }, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-mini btn-danger' %></td>
-      <% else %>
-        <td></td>
-        <td></td>
-      <% end %>
-    <% else %>
-      <td></td>
-      <td></td>
+    <% @recipes.each do |recipe| %>
+      <tr>
+        <td class="thumb"><%= (link_to (image_tag recipe.image_url(:thumb), :class => "img-polaroid"), recipe) if recipe.image? %></td>
+        <td class="overview">
+          <div><%= link_to recipe.name, recipe, :class => "recipe-name-link" %></div>
+          <div><b>Servings:</b> <%= recipe.servings %></div>
+          <div><b>Summary:</b>
+            <%=raw truncate((recipe.summary), :length => 180, :omission => link_to(" ... more", recipe)) %></div>
+          <div><b>Author:</b> <%= recipe.author %></div>
+        </td>
+        <td class="actions">
+          <%= link_to 'Show', recipe, :class => 'btn btn-mini' %>
+          <% if user_signed_in? %>
+            <% if (current_user.has_role? :admin) || (current_user.has_role? :member) %>
+              <br><%= link_to 'Edit', edit_recipe_path(recipe), :class => 'btn btn-mini' %>
+            <% end %>
+            <% if (current_user.has_role? :admin) %>
+               <br><%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' }, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-mini btn-danger' %>
+            <% end %>
+          <% end %>
+        </td>
+      </tr>
     <% end %>
-  </tr>
-<% end %>
-</table>
+  </table>
+</div>
 
-<br />
+<div id="sidebar" class="span3">
+  <h2>Tag Cloud</h2>
+</div>
 
-<%= link_to 'New Recipe', new_recipe_path, :class => 'btn btn-mini
-btn-primary' %>
+<div class="span12">
+  <% if user_signed_in? %>
+    <% if (current_user.has_role? :admin) || (current_user.has_role? :member) %>
+      <%= link_to 'New Recipe', new_recipe_path, :class => 'btn btn-mini btn-primary' %>
+    <% end %>
+  <% end %>
+</div>
