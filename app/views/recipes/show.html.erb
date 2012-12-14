@@ -35,6 +35,8 @@
           </p>
         </div>
       </div>
+
+      <div class="tags">Tags: <%=raw @recipe.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></div>
     </div>
   </div>
 </div>

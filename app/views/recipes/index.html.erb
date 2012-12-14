@@ -1,6 +1,12 @@
 <h1>Recipes</h1>
 
+
 <div id="recipe-listing" class="span8">
+  <!--<%# if @recipes.tagged_with(params[:tag]) %>-->
+    <!--<div>-->
+      <!--<h4>Viewing the list of recipes tagged as members of the <%#= @recipe.tag(params[:tag]).name.inspect %> tag category</h4>-->
+    <!--</div>-->
+  <!--<%# end %>-->
   <table class="table table-striped">
     <tr>
       <th></th>
@@ -17,6 +23,7 @@
           <div><b>Summary:</b>
             <%=raw truncate((recipe.summary), :length => 180, :omission => link_to(" ... more", recipe)) %></div>
           <div><b>Author:</b> <%= recipe.author %></div>
+          <div>Tags: <%= raw recipe.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></div>
         </td>
         <td class="actions">
           <%= link_to 'Show', recipe, :class => 'btn btn-mini' %>
@@ -35,7 +42,12 @@
 </div>
 
 <div id="sidebar" class="span3">
-  <h2>Tag Cloud</h2>
+  <h3>Tag Cloud</h3>
+  <div id="tag_cloud">
+    <% tag_cloud Recipe.tag_counts, %w{s m l} do |tag, css_class| %>
+    <%= link_to tag.name, tag_path(tag.name), class: css_class %>
+  <% end %>
+</div>
 </div>
 
 <div class="span12">

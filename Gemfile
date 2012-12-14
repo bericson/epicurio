@@ -27,3 +27,4 @@ gem "quiet_assets", ">= 1.0.1", :group => :development
 gem "money-rails", "= 0.6.0"
 gem "carrierwave", "= 0.6.2"
 gem "rmagick", "= 2.13.1"
+gem "acts-as-taggable-on"

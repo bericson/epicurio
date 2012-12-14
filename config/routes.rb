@@ -11,6 +11,8 @@ Epicurio::Application.routes.draw do
   resources :foods
   resources :recipes
 
+  get 'tags/:tag', to: 'recipes#index', as: :tag
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

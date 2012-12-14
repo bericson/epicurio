@@ -3,8 +3,9 @@ class FoodsController < ApplicationController
   # GET /foods.json
   def index
     #@foods = Food.all
-    @foods = Food.where(:id => 1..100)
     #@foods = Food.find(:all, :order => "shrt_desc ASC")
+    #@foods = Food.where(:id => 1..100)
+    @foods = Food.where(:id => 1..100).order("shrt_desc ASC")
 
     respond_to do |format|
       format.html # index.html.erb

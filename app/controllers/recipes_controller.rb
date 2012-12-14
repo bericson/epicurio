@@ -2,7 +2,11 @@ class RecipesController < ApplicationController
   # GET /recipes
   # GET /recipes.json
   def index
-    @recipes = Recipe.order("name ASC").all
+    if params[:tag]
+      @recipes = Recipe.tagged_with(params[:tag]).order("name ASC")
+    else
+      @recipes = Recipe.order("name ASC").all
+    end
 
     respond_to do |format|
       format.html # index.html.erb
