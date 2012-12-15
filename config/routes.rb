@@ -1,5 +1,8 @@
 Epicurio::Application.routes.draw do
 
+  get "comments/index"
+  get "comments/new"
+
   authenticated :user do
     root :to => 'home#index'
   end
@@ -9,7 +12,9 @@ Epicurio::Application.routes.draw do
   devise_for :users
   resources :users
   resources :foods
-  resources :recipes
+  resources :recipes do
+    resources :comments
+  end
 
   get 'tags/:tag', to: 'recipes#index', as: :tag
 

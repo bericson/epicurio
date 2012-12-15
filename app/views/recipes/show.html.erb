@@ -15,8 +15,7 @@
         <p>
           <b>Servings:</b> <%= @recipe.servings %><br>
           <b>Prep time:</b> <%= @recipe.prep_time %><br>
-          <b>Cook time:</b> <%= @recipe.cook_time %><br>
-          <b>Author:</b> <%= @recipe.author %>
+          <b>Cook time:</b> <%= @recipe.cook_time %>
         </p>
         <p>
           <b>Summary:</b><br>
@@ -40,6 +39,7 @@
         </div>
       </div>
 
+      <div><b>Author/Source:</b> <%= @recipe.author %></div>
       <div class="tags"><b>Tags:</b> <%=raw @recipe.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></div>
     </div>
   </div>
@@ -53,3 +53,29 @@
   <% end %>
   <%= link_to 'Back to Recipe Listing', recipes_path, :class => "btn" %>
 </div>
+
+<div id="comments">
+  <h3>Comments</h3>
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'epicurio'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<!-- DIY comments, disabled in deference to use of disqus comments -->
+<!--<div id="comments">-->
+<!--<h3>Comments</h3>-->
+
+<!--<%#= render "comments/comments" %>-->
+<!--<%#= render "comments/form" %>-->
+<!--</div>-->

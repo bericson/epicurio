@@ -9,6 +9,8 @@ class Recipe < ActiveRecord::Base
 
   acts_as_taggable
 
+  has_many :comments, as: :commentable
+
   #has_many :ingredients, as: :itemable, dependent: :destroy
 
   #monetize :total_cents

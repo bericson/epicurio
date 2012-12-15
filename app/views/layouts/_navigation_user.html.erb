@@ -4,7 +4,7 @@
     <% if current_user.has_role? :admin %> an <% else %> a <% end %>
     <%= current_user.roles.sort.first.name.titlecase %> User
   <% else %>
-    You are not registered or logged-in, and are browsing as an Unregistered User
+    You are not registered or logged-in, and are browsing as an Unregistered User.
   <% end %>
 </div>
 <div class="login-status-nav">

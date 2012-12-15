@@ -3,9 +3,11 @@ class RecipesController < ApplicationController
   # GET /recipes.json
   def index
     if params[:tag]
-      @recipes = Recipe.tagged_with(params[:tag]).order("name ASC")
+      #@recipes = Recipe.tagged_with(params[:tag]).order("name ASC")
+      @recipes = Recipe.tagged_with(params[:tag])
     else
-      @recipes = Recipe.order("name ASC").all
+      #@recipes = Recipe.order("name ASC").all
+      @recipes = Recipe.all
     end
   end
 
@@ -13,6 +15,9 @@ class RecipesController < ApplicationController
   # GET /recipes/1.json
   def show
     @recipe = Recipe.find(params[:id])
+    @commentable = @recipe
+    @comments = @commentable.comments
+    @comment = Comment.new
 
     respond_to do |format|
       format.html # show.html.erb

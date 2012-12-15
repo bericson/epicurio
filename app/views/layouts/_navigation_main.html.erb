@@ -3,9 +3,11 @@
     <!--<li><%= link_to "Home", root_path %></li>-->
     <li><%= link_to "All Recipes", recipes_path %></li>
   <% if user_signed_in? %>
-    <li>
-      <%= link_to "Add New Recipe", new_recipe_path %>
-    </li>
+    <% if (current_user.has_role? :member) || ((current_user.has_role? :admin)) %>
+      <li>
+        <%= link_to "Add New Recipe", new_recipe_path %>
+      </li>
+    <% end %>
     <% if current_user.has_role? :admin %>
       <li><%= link_to "Food DB", foods_path %></li>
     <% end %>

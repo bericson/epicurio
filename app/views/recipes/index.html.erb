@@ -28,7 +28,7 @@
           <div><b>Servings:</b> <%= recipe.servings %></div>
           <div><b>Summary:</b>
             <%=raw truncate((recipe.summary), :length => 180, :omission => link_to(" ... more", recipe)) %></div>
-          <div><b>Author:</b> <%= recipe.author %></div>
+          <div><b>Author/Source:</b> <%= recipe.author %></div>
           <div><b>Tags:</b> <%= raw recipe.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></div>
         </td>
         <td class="actions">
@@ -50,7 +50,7 @@
 <div id="sidebar" class="span4">
   <h3>Tag Cloud</h3>
   <div id="tag_cloud">
-    <% tag_cloud Recipe.tag_counts, %w{xs s m l xl} do |tag, css_class| %>
+    <% tag_cloud Recipe.tag_counts, %w{xxs xs s m l xl xxl} do |tag, css_class| %>
       <%= link_to tag.name, tag_path(tag.name), class: css_class %>
     <% end %>
   </div>
