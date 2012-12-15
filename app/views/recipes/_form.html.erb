@@ -18,14 +18,6 @@
     <%= f.text_field :name %>
   </div>
   <div class="control-group">
-    <%= f.label :summary %>
-    <%= f.text_area :summary, size: "60x12", class: "span5" %>
-  </div>
-  <div class="control-group">
-    <%= f.label :ingredients %>
-    <%= f.text_field :ingredients %>
-  </div>
-  <div class="control-group">
     <%= f.label :servings %>
     <%= f.number_field :servings %>
   </div>
@@ -38,12 +30,20 @@
     <%= f.text_field :cook_time %>
   </div>
   <div class="control-group">
-    <%= f.label :author %>
-    <%= f.text_field :author %>
+    <%= f.label :summary %>
+    <%= f.text_area :summary, size: "60x12", class: "span5" %>
+  </div>
+  <div class="control-group">
+    <%= f.label :ingredients %>
+    <%= f.text_area :ingredients, size: "60x12", class: "span5" %>
   </div>
   <div class="control-group">
     <%= f.label :preparation %>
     <%= f.text_area :preparation, size: "60x12", class: "span5" %>
+  </div>
+  <div class="control-group">
+    <%= f.label :author %>
+    <%= f.text_field :author %>
   </div>
 
   <% if @recipe.image? %>

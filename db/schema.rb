@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121214033037) do
+ActiveRecord::Schema.define(:version => 20121215012630) do
 
   create_table "foods", :force => true do |t|
     t.decimal  "ndb_no"
@@ -84,7 +84,7 @@ ActiveRecord::Schema.define(:version => 20121214033037) do
 
   create_table "recipes", :force => true do |t|
     t.string   "name"
-    t.string   "ingredients"
+    t.text     "ingredients"
     t.integer  "servings"
     t.string   "prep_time"
     t.string   "cook_time"

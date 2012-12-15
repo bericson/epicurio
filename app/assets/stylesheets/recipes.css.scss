@@ -57,7 +57,6 @@ a.recipe-name-link {
 
 #recipe {
   background-color: #C3C7AE;
-  //background-color: #FFFFDD;
   padding: 20px 20px 30px 20px;
   //margin-left: -20px; /* negative indent the amount of the padding to maintain the grid system */
   -webkit-border-radius: 6px 6px 6px 6px;
@@ -71,6 +70,8 @@ a.recipe-name-link {
     width: 200px;
     margin-right: 20px;
   }
-  .details {
+  .overview {
+  }
+  .main-details {
   }
 }
