@@ -7,11 +7,6 @@ class RecipesController < ApplicationController
     else
       @recipes = Recipe.order("name ASC").all
     end
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @recipes }
-    end
   end
 
   # GET /recipes/1

@@ -1,25 +1,13 @@
 <%= link_to "Epicurio", root_path, :class => 'brand' %>
 <ul class="nav">
-    <li><%= link_to "Home", root_path %></li>
-    <li><%= link_to "Recipes", recipes_path %></li>
+    <!--<li><%= link_to "Home", root_path %></li>-->
+    <li><%= link_to "All Recipes", recipes_path %></li>
   <% if user_signed_in? %>
+    <li>
+      <%= link_to "Add New Recipe", new_recipe_path %>
+    </li>
     <% if current_user.has_role? :admin %>
       <li><%= link_to "Food DB", foods_path %></li>
-    <% end %>
-  <% end %>
-  <% if user_signed_in? %>
-    <li>
-      <%#= link_to('Create New Recipe') %>
-    </li>
-  <% end %>
-  <% if user_signed_in? %>
-    <li>
-      <%#= link_to('Manage My Recipes') %>
-    </li>
-    <% if current_user.has_role? :admin %>
-      <li>
-        <%#= link_to('Manage All Recipes (admin)') %>
-      </li>
     <% end %>
   <% end %>
 </ul>

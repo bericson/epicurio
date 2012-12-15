@@ -2,18 +2,28 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.add-new-btn {
+  //margin-left: 685px;
+}
+
 #recipe-listing {
   float: left;
   margin-top: 15px;
+  //table {
+  //  padding: 15px;
+  //}
   .thumb {
     width: 60px;
-    //padding: 10px 0px 0px 30px;
+    padding: 20px 0px 30px 20px;
   }
   .overview {
     //width: 400px;
+    padding: 20px 0px 30px 15px;
   }
   .actions {
+    //width: 100px;
     text-align: center;
+    padding: 20px 20px 30px 0px;
   }
   .btn {
     margin: 5px;
@@ -21,13 +31,16 @@
 }
 
 #sidebar {
+  width: 325px;
 }
 
 #tag_cloud {
   line-height: 1.6em;
-  .s { font-size: 0.7em; font-style: italic; }
-  .m { font-size: 1em; }
-  .l { font-size: 1.3em; font-weight: bold; }
+  .xs { font-size: 0.8em; }
+  .s { font-size: 1em; }
+  .m { font-size: 1.3em; font-weight: bold; }
+  .l { font-size: 1.6em; }
+  .xl { font-size: 2em; font-weight: bold; }
 }
 
 .img-polaroid {

@@ -3,10 +3,14 @@
 
 <div id="recipe">
   <div class="row">
-    <div class="image span2">
-      <%= (image_tag @recipe.image_url(:large), :class => "img-polaroid") if @recipe.image? %>
-    </div>
+    <% if @recipe.image? %>
+      <div class="image span3">
+        <%= image_tag @recipe.image_url(:large), :class => "img-polaroid" %>
+      </div>
     <div class="recipe-content span9">
+    <% else %>
+    <div class="recipe-content span12">
+    <% end %>
       <div class="overview">
         <p>
           <b>Servings:</b> <%= @recipe.servings %><br>
@@ -36,7 +40,7 @@
         </div>
       </div>
 
-      <div class="tags">Tags: <%=raw @recipe.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></div>
+      <div class="tags"><b>Tags:</b> <%=raw @recipe.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></div>
     </div>
   </div>
 </div>
@@ -44,8 +48,8 @@
 <div class="crud-links">
   <% if user_signed_in? %>
     <% if (current_user.has_role? :admin) || (current_user.has_role? :member) %>
-      <%= link_to 'Edit Recipe', edit_recipe_path(@recipe), :class => "btn btn-mini" %>
+      <%= link_to 'Edit Recipe', edit_recipe_path(@recipe), :class => "btn" %>
     <% end %>
   <% end %>
-  <%= link_to 'Back to Recipe Listing', recipes_path, :class => "btn btn-mini" %>
+  <%= link_to 'Back to Recipe Listing', recipes_path, :class => "btn" %>
 </div>
