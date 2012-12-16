@@ -1,0 +1,23 @@
+$(document).ready ->
+  $("#featured-recipes").bxSlider
+    auto:             true,
+    autoHover:        true,
+    speed:            1000,
+    pause:            4000,
+    controls:         true,
+    autoControls:     true,
+    autoDelay:         0,
+    prevImage:        'assets/images/btn-prev-up.png',
+    nextImage:        'assets/images/btn-next-up.png',
+    moveSlideQty:     1
+
+#  buildPager: function(slideIndex){
+#    switch(slideIndex){
+#    case 0:
+#    return '<img src="/images/thumbs/tree_root.jpg">';
+#    case 1:
+#    return '<img src="/images/thumbs/houses.jpg">';
+#    case 2:
+#    return '<img src="/images/thumbs/hill_fence.jpg">';
+#    }
+#  }

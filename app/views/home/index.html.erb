@@ -1,4 +1,49 @@
-<h1>Home</h1>
-<% @users.each do |user| %>
-  <p>User: <%= link_to user.name, user %> | <%= user.inspect %></p>
-<% end %>
+<!--<%#= stylesheet_link_tag "recipes" %>-->
+
+<h1>Welcome ...</h1>
+
+<p>The Epicurio website is a place to store and share recipes. Unregistered
+  users may browse all available recipes and comment on them. Member users may
+  create and manage their own recipes. To request Member level access, first
+  click the 'Sign Up' link at the top right of the site, then,
+  <a href="mailto:benbjammin@gmail.com">email this site's creator</a> to
+  request that your User role be upgraded to the Member level. You will receive
+  an email response informing you of the upgrade at which point, the controls
+  to create and manage your own recipes will then be visible to you when you
+  browse the site. Bon appetit!</p>
+
+<h3>Featured Recipes</h3>
+
+<div class="slider-container container-fluid span11">
+  <ul id="featured-recipes">
+    <% @recipes.each do |recipe| %>
+      <li>
+        <div id="featured-recipe">
+          <% if recipe.image? %>
+            <div class="image">
+              <%= image_tag recipe.image_url(:medium), :class => "img-polaroid", width: "100", height: "100" %>
+            </div>
+          <% end %>
+          <div class="overview span8">
+            <div><%= link_to recipe.name, recipe, :class => "recipe-name-link" %></div>
+            <div><b>Servings:</b> <%= recipe.servings %></div>
+            <div><b>Summary:</b>
+              <%=raw truncate((recipe.summary), :length => 180, :omission => link_to(" ... more", recipe)) %></div>
+            <div><b>Author/Source:</b> <%= recipe.author %></div>
+            <div><b>Tags:</b> <%= raw recipe.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></div>
+            <!--<div>-->
+              <!--<%= link_to 'Show', recipe, :class => 'btn btn-mini' %>-->
+              <!--<% if user_signed_in? %>-->
+                <!--<% if (current_user.has_role? :admin) || (current_user.has_role? :member) %>-->
+                  <br><%= link_to 'Edit', edit_recipe_path(recipe), :class => 'btn btn-mini' %>
+                <!--<% end %>-->
+                <!--<% if (current_user.has_role? :admin) %>-->
+                  <br><%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' }, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-mini btn-danger' %>
+                <!--<% end %>-->
+              <!--<% end %>-->
+            <!--</div>-->
+        </div>
+      </li>
+    <% end %>
+  </ul>
+</div>

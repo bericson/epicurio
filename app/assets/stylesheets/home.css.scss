@@ -1,0 +1,44 @@
+// Place all the styles related to the home page here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.slider-container {
+  margin-top: 20px;
+}
+
+#featured-recipes {
+  border-top: 15px solid #748C73;
+}
+
+#featured-recipe {
+  height: 155px;
+  padding: 20px 20px 20px 20px;
+  border-top: 1px solid #fff;
+  .image {
+    display: inline;
+    margin-left: 60px;
+    float: left;
+    //width: 25%;
+  }
+  .overview {
+    display: inline;
+    //padding: 20px 0px 30px 15px;
+    float: left;
+    //margin-left: -30px;
+  }
+  .btn {
+    margin: 5px;
+  }
+}
+
+.img-polaroid {
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+}
+
+a.recipe-name-link {
+  font-size: 1.4em;
+  font-weight: bold;
+  &:link { color: #197778; }
+  &:visited { color: #197778; }
+}

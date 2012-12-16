@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 
 gem "rails", "3.2.9"
-gem "pg"
+gem "pg", "~> 0.14.1"
 
 group :assets do
   gem "sass-rails",   "~> 3.2.3"
@@ -10,6 +10,8 @@ group :assets do
 end
 
 gem "jquery-rails", "~> 2.1.4"
+gem "jquery-ui-rails", "~> 2.0.2"
+gem "bxslider-rails", "~> 3.0.0"
 gem "rspec-rails", ">= 2.11.0", :group => [:development, :test]
 gem "email_spec", ">= 1.2.1", :group => :test
 gem "cucumber-rails", ">= 1.3.0", :group => :test, :require => false

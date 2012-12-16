@@ -13,4 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
+//= require bxslider
+//= require easing1.3
 //= require_tree .
