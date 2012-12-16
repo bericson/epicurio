@@ -49,6 +49,29 @@ body { padding-top: 75px; }
   background-color: #C4C7AB;
 }
 
+.form-horizontal {
+  .controls {
+    margin-left: 0px;
+  }
+}
+
+h3 { font-size: 2em; }
+h4 { font-size: 1.6em; }
+h5 { font-size: 1.2em; }
+
+h1, h4, h5, h6 {
+  color: #EBD90B;
+}
+
+h2 {
+  color: lighten(#EBD90B, 35%);
+}
+
+h3 {
+  // color: lighten($blueDark, 20%);
+  color: #013435;
+}
+
 .btn-pad {
   padding-right: 30px !important;
 }
