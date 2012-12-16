@@ -6,11 +6,16 @@
   users may browse all available recipes and comment on them. Member users may
   create and manage their own recipes. To request Member level access, first
   click the 'Sign Up' link at the top right of the site, then,
-  <a href="mailto:benbjammin@gmail.com">email this site's creator</a> to
-  request that your User role be upgraded to the Member level. You will receive
-  an email response informing you of the upgrade at which point, the controls
-  to create and manage your own recipes will then be visible to you when you
-  browse the site. Bon appetit!</p>
+  <a href="mailto:benbjammin@gmail.com">email the current site moderator</a> to
+  request an upgrade of one's User role to that of a Member. One ought-to
+  receive a response from the current site moderator, informing the user of the
+  completion of the upgrade, at which point, the controls to create and manage
+  one's own recipes will then be available/visible to them when one browses
+  the site.</p>
+
+<h5>Bon appetit!</h5>
+
+<br>
 
 <h3>Featured Recipes</h3>
 
@@ -21,7 +26,7 @@
         <div id="featured-recipe">
           <% if recipe.image? %>
             <div class="image">
-              <%= image_tag recipe.image_url(:medium), :class => "img-polaroid", width: "100", height: "100" %>
+              <%= link_to (image_tag recipe.image_url(:medium), :class => "img-polaroid", width: "100", height: "100"), recipe %>
             </div>
           <% end %>
           <div class="overview span8">
