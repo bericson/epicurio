@@ -201,7 +201,7 @@ PLATFORMS
 DEPENDENCIES
   acts-as-taggable-on (~> 2.3.3)
   bootstrap-sass (>= 2.1.0.0)
-  bootswatch-rails
+  bootswatch-rails (~> 0.1.0)
   bxslider-rails (~> 3.0.0)
   cancan (>= 1.6.8)
   capybara (>= 1.1.2)
