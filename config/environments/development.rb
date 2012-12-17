@@ -16,12 +16,12 @@ Epicurio::Application.configure do
     authentication: "plain",
     enable_starttls_auto: true,
 
-    user_name: "benbjammin",
-    password: "huMptyduMpty"
+    #user_name: "benbjammin",
+    #password: "huMptyduMpty"
 
     # Commented out for now as, for some reason these values aren't being passed from my .bashrc file in the environment (RubyMine loading issue?)
-    #user_name: ENV["GMAIL_USERNAME"],
-    #password: ENV["GMAIL_PASSWORD"]
+    user_name: ENV["GMAIL_USERNAME"],
+    password: ENV["GMAIL_PASSWORD"]
   }
 
   # In the development environment your application's code is reloaded on
