@@ -26,6 +26,11 @@
 
 body { padding-top: 75px; }
 
+a {
+  &:link { color: #fff; }
+  &:visited { color: #fff; }
+}
+
 .crud-links {
   margin-top: 20px;
 }
