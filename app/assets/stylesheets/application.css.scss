@@ -30,9 +30,13 @@ a {
   &:link { color: #fff; }
   &:visited { color: #fff; }
 }
-.navbar .brand {
+.navbar {
+  .brand {
   padding: 20px 20px 12px !important;
   color: #fff !important;
+  .nav > li > a {
+    color: #f5f3dc !important;
+  }
 }
 
 .crud-links {
