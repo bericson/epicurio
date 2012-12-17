@@ -6,18 +6,14 @@
   users may browse all available recipes and comment on them. Member users may
   create and manage their own recipes. To request Member level access, first
   click the 'Sign Up' link at the top right of the site, then,
-  <a href="mailto:benbjammin@gmail.com">email the current site moderator</a> to
+  <%= mail_to "benbjammin@gmail.com", "email the current site moderator", :encode => "hex" %> to
   request an upgrade of one's User role to that of a Member. One ought-to
   receive a response from the current site moderator, informing the user of the
   completion of the upgrade, at which point, the controls to create and manage
   one's own recipes will then be available/visible to them when one browses
-  the site.</p>
+  the site. Bon appetit!</p>
 
-<h5>Bon appetit!</h5>
-
-<br>
-
-<h3>Featured Recipes</h3>
+<h3 id="home">Featured Recipes</h3>
 
 <div class="slider-container container-fluid span11">
   <ul id="featured-recipes">
@@ -41,4 +37,14 @@
       </li>
     <% end %>
   </ul>
+</div>
+<div id="bx-pager" class="span10 offset1">
+  <% i = 0 %>
+  <% @recipes_random_limited.each do |recipe|
+    @recipe_index = []
+    @recipe_index << i
+  %>
+    <%= link_to (image_tag recipe.image_url(:thumb), :class => "img-polaroid", width: "50", height: "50"), "", :'data-slide-index' => @recipe_index %>
+    <% i += 1 %>
+  <% end %>
 </div>

@@ -2,8 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.slider-container {
+h3 {
   margin-top: 20px;
+}
+
+.slider-container {
+  margin-top: 10px;
 }
 
 #featured-recipes {
@@ -41,4 +45,8 @@ a.recipe-name-link {
   font-weight: bold;
   &:link { color: #197778; }
   &:visited { color: #197778; }
+}
+
+#bx-pager {
+  margin-bottom: 15px;
 }
