@@ -5,10 +5,12 @@ class RecipesController < ApplicationController
     if params[:tag]
       #@recipes = Recipe.tagged_with(params[:tag]).order("name ASC")
       @recipes = Recipe.tagged_with(params[:tag])
+      @tag_name = params[:tag]
     else
       #@recipes = Recipe.order("name ASC").all
       @recipes = Recipe.all
     end
+    @users = User.all
   end
 
   # GET /recipes/1
@@ -38,6 +40,7 @@ class RecipesController < ApplicationController
 
   # GET /recipes/1/edit
   def edit
+    authorize! :update, @user, :message => 'Members may only edit recipes which are their own.'
     @recipe = Recipe.find(params[:id])
   end
 
@@ -76,6 +79,7 @@ class RecipesController < ApplicationController
   # DELETE /recipes/1
   # DELETE /recipes/1.json
   def destroy
+    authorize! :update, @user, :message => 'Members may only delete recipes which are their own.'
     @recipe = Recipe.find(params[:id])
     @recipe.destroy
 

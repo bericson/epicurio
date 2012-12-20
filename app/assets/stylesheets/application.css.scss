@@ -26,18 +26,33 @@
 
 body { padding-top: 75px; }
 
-a {
-  &:link { color: #fff; }
-  &:visited { color: #fff; }
-}
 .navbar {
   .brand {
   padding: 20px 20px 12px !important;
   color: #fff !important;
   }
+
   .nav > li > a {
-    color: #fff !important;
+    &:link { color: #fff; }
+    &:visited { color: #fff; }
+    &:hover { color: #EBD90B; }
   }
+}
+
+a {
+  &:link { color: #fff; }
+  &:visited { color: #fff; }
+  &:hover { color: #EBD90B; }
+}
+
+.alert-error {
+  color: #F2B16B;
+}
+
+.control-group.error > label,
+.control-group.error .help-block,
+.control-group.error .help-inline {
+  color: #F2B16B;
 }
 
 .crud-links {
@@ -69,17 +84,36 @@ a {
   }
 }
 
-h3 { font-size: 2em !important; }
-h4 { font-size: 1.6em !important; }
-h5 { font-size: 1.2em !important; }
+.inline {
+  display: inline;
+}
+
+.margin-reset {
+  margin: 0;
+}
 
 h2 {
   color: lighten(#EBD90B, 35%) !important;
 }
 
 h3 {
-  // color: lighten($blueDark, 20%);
+  font-size: 1.4em !important;
   color: #013435 !important;
+}
+
+h4 {
+  font-size: 1.3em !important;
+  color: lighten($blueDark, 20%);
+}
+
+h5 {
+  font-size: 1.2em !important;
+  color: lighten(#013435, 5%) !important;
+}
+
+h6 {
+  font-size: 1.1em !important;
+  color: lighten(#013435, 5%) !important;
 }
 
 .btn-pad {

@@ -1,18 +1,6 @@
 <h1>Recipes</h1>
 
 <div id="recipe-listing" class="span8">
-  <!--<%# if @recipes.tagged_with(params[:tag]) %>-->
-    <!--<div>-->
-      <!--<h4>Viewing the list of recipes tagged as members of the <%#= @recipe.tag(params[:tag]).name.inspect %> tag category</h4>-->
-    <!--</div>-->
-  <!--<%# end %>-->
-  <!--<div class="add-new-btn">-->
-    <!--<% if user_signed_in? %>-->
-      <!--<% if (current_user.has_role? :admin) || (current_user.has_role? :member) %>-->
-        <!--<%= link_to 'Add New Recipe', new_recipe_path, :class => 'btn btn-mini btn-primary' %>-->
-      <!--<% end %>-->
-    <!--<% end %>-->
-  <!--</div>-->
   <table class="table table-striped">
     <thead>
       <tr>
@@ -27,12 +15,12 @@
         <tr>
           <td class="thumb"><%= (link_to (image_tag recipe.image_url(:thumb), :class => "img-polaroid"), recipe) if recipe.image? %></td>
           <td class="overview">
-            <div><%= link_to recipe.name, recipe, :class => "recipe-name-link" %></div>
-            <div><b>Servings:</b> <%= recipe.servings %></div>
-            <div><b>Summary:</b>
+            <div><h3 class="margin-reset"><%= link_to recipe.name, recipe, :class => "recipe-name-link" %></h3></div>
+            <div><h6 class="inline">Servings:</h6> <%= recipe.servings %></div>
+            <div><h6 class="inline">Summary:</h6>
               <%=raw truncate((recipe.summary), :length => 180, :omission => link_to(" ... more", recipe)) %></div>
-            <div><b>Author/Source:</b> <%= recipe.author %></div>
-            <div><b>Tags:</b> <%= raw recipe.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></div>
+            <div><h6 class="inline">Author/Source:</h6> <%= recipe.author %></div>
+            <div><h6 class="inline">Tags:</h6> <%= raw recipe.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></div>
           </td>
           <td class="actions">
             <%= link_to 'Show', recipe, :class => 'btn btn-mini' %>
@@ -57,5 +45,25 @@
     <% tag_cloud Recipe.tag_counts, %w{xxs xs s m l xl xxl} do |tag, css_class| %>
       <%= link_to tag.name, tag_path(tag.name), class: css_class %>
     <% end %>
+  </div>
+  <% if @tag_name %>
+    <div class="filtered-tag-name">
+      <h5>Viewing the list of recipes tagged with the tag: "<%= @tag_name %>"</h5>
+    </div>
+  <% end %>
+  <div class="users">
+    <h3>Users</h3>
+    <p>Click on a user's name to view the list of recipes they've created:</p>
+    <ul>
+      <% @users.each do |user| %>
+        <li>
+           <% if user.name == "" %>
+            <%= link_to user.email, user_path(user) %>
+           <% else %>
+            <%= link_to user.name, user_path(user) %>
+           <% end %>
+        </li>
+      <% end %>
+    </ul>
   </div>
 </div>
