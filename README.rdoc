@@ -3,4 +3,4 @@ The Epicurio website is a place to store and share recipes. Unregistered
 users may browse all available recipes and comment on them. Member users may
 create and manage their own recipes.
 
-URL for app: [https://fierce-shelf-8580.herokuapp.com/] https://fierce-shelf-8580.herokuapp.com/
+Website/app URL: https://fierce-shelf-8580.herokuapp.com/
